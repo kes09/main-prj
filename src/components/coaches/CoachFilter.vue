@@ -17,27 +17,28 @@
 </template>
 
 <script>
-export default {
+export default{
   emits: ['change-filter'],
-  data() {
-    return {
+  data(){
+    return{
       filters: {
         frontend: true,
-        backend: true,
+        backend:true,
         career: true
       }
     };
   },
-  methods: {
-    setFilter(event) {
+  methods:{
+    setFilter(event){
       const inputId = event.target.id;
       const isActive = event.target.checked;
-      const updatedFilters = {
+      const updatedFilters ={
         ...this.filters,
-        [inputId]: isActive
+        [inputId] : isActive
       };
       this.filters = updatedFilters;
-      this.$emit('change-filter', updatedFilters);
+      this.$emit('change-filter',updatedFilters);
+
     }
   }
 }
